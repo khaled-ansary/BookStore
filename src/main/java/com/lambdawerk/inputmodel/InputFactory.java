@@ -16,11 +16,11 @@ import javax.xml.namespace.QName;
  */
 
 @XmlRegistry
-public class ObjectFactory {
+public class InputFactory {
 
     private final static QName _Catalog_QNAME = new QName("", "catalog");
 
-    public ObjectFactory() {
+    public InputFactory() {
     }
 
     public CatalogType createCatalogType() {

@@ -34,7 +34,7 @@ public class BookType {
     protected String title;
     @XmlElement(required = true)
     protected String genre;
-    protected float price;
+    protected double price;
     @XmlElement(name = "publish_date", required = true)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar publishDate;
@@ -64,10 +64,10 @@ public class BookType {
     public void setGenre(String value) {
         this.genre = value;
     }
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
-    public void setPrice(float value) {
+    public void setPrice(double value) {
         this.price = value;
     }
     public XMLGregorianCalendar getPublishDate() {

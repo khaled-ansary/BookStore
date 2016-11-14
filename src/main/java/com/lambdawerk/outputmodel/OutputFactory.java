@@ -15,10 +15,10 @@ import javax.xml.namespace.QName;
  * 
  */
 @XmlRegistry
-public class ObjectFactory {
+public class OutputFactory {
 
     private final static QName _Genres_QNAME = new QName("", "genres");
-    public ObjectFactory() {
+    public OutputFactory() {
     }
 
     public GenresType createGenresType() {

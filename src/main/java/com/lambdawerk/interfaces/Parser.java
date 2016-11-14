@@ -9,9 +9,5 @@ import java.io.InputStream;
  */
 public interface Parser {
     public void parseInputXML(InputStream in);
-    public void getOutputXML(String outputFile);
-    public void avgPrice();
-    public void sortTitle();
-    public double getAvgPrice();
-    public double getSortedTitle();
+    public void getOutputXML(String outputFile); 
 }
