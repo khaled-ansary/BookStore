@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/E:/Java%20Program/BookStore/../Catalog/catalog.xsd" uri="src/main/resources/jaxb/model/catalog.xsd"/>
+</catalog>
