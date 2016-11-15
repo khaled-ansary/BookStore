@@ -9,18 +9,17 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 
-
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "genresType", propOrder = {
-    "genre"
-})
-
 /**
  *
  *  @author Khaled
  * 
  *  output xml model class to get list of genres
  */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "genresType", propOrder = {
+    "genre"
+})
+
 public class GenresType {
 
     protected List<GenreType> genre;

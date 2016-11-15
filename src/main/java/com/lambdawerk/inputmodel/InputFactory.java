@@ -23,15 +23,15 @@ public class InputFactory {
     public InputFactory() {
     }
 
-    public CatalogType createCatalogType() {
-        return new CatalogType();
+    public Catalog createCatalogType() {
+        return new Catalog();
     }
-    public BookType createBookType() {
-        return new BookType();
+    public Book createBookType() {
+        return new Book();
     }
     @XmlElementDecl(namespace = "", name = "catalog")
-    public JAXBElement<CatalogType> createCatalog(CatalogType value) {
-        return new JAXBElement<CatalogType>(_Catalog_QNAME, CatalogType.class, null, value);
+    public JAXBElement<Catalog> createCatalog(Catalog value) {
+        return new JAXBElement<Catalog>(_Catalog_QNAME, Catalog.class, null, value);
     }
 
 }

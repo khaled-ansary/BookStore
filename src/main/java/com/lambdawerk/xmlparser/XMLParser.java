@@ -1,8 +1,8 @@
 
 package com.lambdawerk.xmlparser;
 
-import com.lambdawerk.inputmodel.BookType;
-import com.lambdawerk.inputmodel.CatalogType;
+import com.lambdawerk.inputmodel.Book;
+import com.lambdawerk.inputmodel.Catalog;
 import com.lambdawerk.inputmodel.Genre;
 import com.lambdawerk.inputmodel.InputFactory;
 import com.lambdawerk.interfaces.Parser;
@@ -30,7 +30,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 /**
- *
+ * process input xml and generate output xml
  * @author Khaled
  */
 public class XMLParser implements Parser{
@@ -38,6 +38,11 @@ public class XMLParser implements Parser{
     private Map<String, List<Genre>> genres;
     private List<Genre> genre_list;
 
+    /* parse input xml and generated sorted map by
+       genres which contains genre name, average price
+       and book title
+    */
+    
     @Override
     public Map<String, List<Genre>> parseInputXML(InputStream in) {
         
@@ -46,10 +51,10 @@ public class XMLParser implements Parser{
         try{
             JAXBContext jaxbCtx = JAXBContext.newInstance(InputFactory.class);
             Unmarshaller unmarshaller = jaxbCtx.createUnmarshaller();
-            JAXBElement<CatalogType> catalog = (JAXBElement)unmarshaller.unmarshal(in);
-            List<BookType> books = catalog.getValue().getBook();
+            JAXBElement<Catalog> catalog = (JAXBElement)unmarshaller.unmarshal(in);
+            List<Book> books = catalog.getValue().getBook();
             genres = new HashMap<>();
-            books.stream().forEach((BookType book) -> {
+            books.stream().forEach((Book book) -> {
                 if(genres.containsKey(book.getGenre())){
                     
                     genre_list = genres.get(book.getGenre());
@@ -75,7 +80,9 @@ public class XMLParser implements Parser{
         }
         return sortedGenres;
     }
-
+    /*
+        generated output xml
+    */
     @Override
     public void processOutputXML(Map<String, List<Genre>> genres, String outputFile) {
         try {
@@ -107,6 +114,7 @@ public class XMLParser implements Parser{
             marshaller.marshal(element,System.out);
             OutputStream output = new FileOutputStream( outputFile );
             marshaller.marshal( element, output );
+            Logger.getLogger(XMLParser.class.getName()).log(Level.INFO, "output write into "+ outputFile);
             
         } catch (JAXBException ex) {
             Logger.getLogger(XMLParser.class.getName()).log(Level.SEVERE, null, ex);

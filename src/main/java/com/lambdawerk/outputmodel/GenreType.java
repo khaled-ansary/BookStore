@@ -8,10 +8,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "genreType", propOrder = {
-    "title"
-})
 
 /**
  *
@@ -19,6 +15,11 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *  output xml model class to get genre data
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "genreType", propOrder = {
+    "title"
+})
 
 public class GenreType {
 

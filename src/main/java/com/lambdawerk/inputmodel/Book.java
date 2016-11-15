@@ -9,6 +9,12 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
+/**
+ *
+ *  @author Khaled
+ * 
+ *  input xml model class to get book informations
+ */
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "bookType", propOrder = {
@@ -19,14 +25,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "publishDate",
     "description"
 })
-
-/**
- *
- *  @author Khaled
- * 
- *  input xml model class to get book informations
- */
-public class BookType {
+public class Book {
 
     @XmlElement(required = true)
     protected String author;
