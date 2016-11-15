@@ -26,12 +26,16 @@ public class GenreType {
     @XmlAttribute(name = "name")
     protected String name;
     @XmlAttribute(name = "average_price")
-    protected Float averagePrice;
+    protected Double averagePrice;
     public List<String> getTitle() {
         if (title == null) {
             title = new ArrayList<String>();
         }
         return this.title;
+    }
+
+    public void setTitle(List<String> title) {
+        this.title = title;
     }
 
     public String getName() {
@@ -42,11 +46,11 @@ public class GenreType {
         this.name = value;
     }
 
-    public Float getAveragePrice() {
+    public Double getAveragePrice() {
         return averagePrice;
     }
 
-    public void setAveragePrice(Float value) {
+    public void setAveragePrice(Double value) {
         this.averagePrice = value;
     }
 

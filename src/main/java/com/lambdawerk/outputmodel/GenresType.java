@@ -32,4 +32,8 @@ public class GenresType {
         return this.genre;
     }
 
+    public void setGenre(List<GenreType> genre) {
+        this.genre = genre;
+    }
+
 }
