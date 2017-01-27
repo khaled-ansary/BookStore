@@ -28,8 +28,6 @@ input file:
 
 The output:
 
-The output XML file should contain a list of the genres that occur in the input file.  For each genre, the titles of the books in that genre and the average price of the books in each genre should be listed. The file should contain the genres and the books in each genre sorted by name.
-Example:
 
 <genres>
 <genre name=”Horror” average-price=”19.2”>
